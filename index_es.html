@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reparación de Bollos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-primario: #004080;
+      --color-secundario: #e6f2ff;
+      --color-fondo: #f9fcff;
+      --color-texto: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--color-secundario);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .languages {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .languages img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .languages img:hover {
+      transform: scale(1.1);
+    }
+
+    .languages img[alt="Deutsch"] {
+        object-fit: cover; /* Ajuste específico para la bandera de Alemania */
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: var(--color-primario);
+      margin-bottom: 20px;
+    }
+
+    section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.125rem;
+    }
+
+    .videos-section {
+      background-color: var(--color-secundario);
+    }
+
+    .videos-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .video {
+      background: white;
+      border: 1px solid var(--color-primario);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .video:hover {
+      transform: translateY(-5px);
+    }
+
+    .video video {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      display: block;
+    }
+
+    .responsive-image {
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .languages {
+            justify-content: center;
+        }
+
+        .videos-container {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el tamaño mínimo de los videos */
+        }
+
+        section h2 {
+            font-size: 1.5rem; /* Reduce el tamaño del título */
+        }
+
+        section p {
+            font-size: 1rem; /* Reduce el tamaño del texto */
+        }
+
+        footer {
+            padding: 20px 10px; /* Reduce el padding del footer */
+        }
+
+        .responsive-image {
+            content: url("fotos/images.jpg"); /* Cambia la imagen en dispositivos móviles */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logo img {
+            height: 40px; /* Reduce el tamaño del logo */
+        }
+
+        .languages img {
+            width: 30px;
+            height: 30px; /* Ajusta el tamaño de las banderas */
+        }
+
+        .videos-container {
+            grid-template-columns: 1fr; /* Muestra un video por fila */
+        }
+    }
+
+    footer {
+        background-color: var(--color-primario);
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+    }
+    footer .footer-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    footer p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    footer p img {
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="languages">
+      <a href="index.html"><img src="fotos/italia.png" alt="Italiano" title="Italiano" /></a>
+      <a href="index_es.html"><img src="fotos/spain.png" alt="Español" title="Español" /></a>
+      <a href="index_en.html"><img src="fotos/uk.png" alt="English" title="English" /></a>
+      <a href="index_fr.html"><img src="fotos/francia.svg" alt="Français" title="Français" /></a>
+      <a href="index_de.html"><img src="fotos/ale.svg" alt="Deutsch" title="Deutsch" /></a>
+    </div>
+    <div class="logo">
+      <img src="fotos/logojuan2.png" alt="Reparación de Bollos" />
+    </div>
+  </header>
+
+  <!-- Imagen Responsiva -->
+  <img src="fotos/Abolladura.jpg" alt="Abolladura" class="responsive-image" />
+
+  <section>
+    <h2>¿Quiénes somos?</h2>
+    <p>
+      Somos técnicos especializados en la reparación de daños por granizo y otras pequeñas abolladuras en vehículos (tanto de chapa como de aluminio).
+      Hacemos todo lo posible para reparar tu coche sin usar pintura ni masilla. En la mayoría de los casos, te devolveremos el vehículo el mismo día de la entrega, evitando así costes elevados y largas esperas, como suele ocurrir con las reparaciones tradicionales.
+
+      Tu coche no perderá valor y será confiado a expertos que también pueden recogerlo directamente en tu domicilio si no puedes llevarlo tú mismo.
+
+      ¡Al devolverlo, verás la carrocería como recién salida de fábrica!
+    </p>
+  </section>
+
+  <section class="videos-section">
+    <h2>Ejemplos de nuestro trabajo</h2>
+    <div class="videos-container">
+      <div class="video">
+        <video controls>
+          <source src="fotos/Video_1.mov" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+      <div class="video">
+        <video controls>
+          <source src="fotos/Video.mov" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+      <div class="video">
+        <video controls>
+          <source src="fotos/Video_3.mov" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+      <div class="video">
+        <video controls>
+          <source src="fotos/Video_2.mov" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+        <p>
+            <img src="fotos/mail.webp" alt="Email" />
+            giovamarceca16@gmail.com
+        </p>
+        <p>
+            <img src="fotos/telefono.webp" alt="Teléfono" />
+            +39 379 103 82 69
+        </p>
+        <p>
+            <img src="fotos/direccion.webp" alt="Dirección" />
+            Turín, Via Envie 8, 10141
+        </p>
+        <p>
+            <img src="fotos/ig.webp" alt="Instagram" />
+            <a href="https://www.instagram.com/dent_repair_pdr" target="_blank" style="color: white; text-decoration: none;">dent_repair_pdr</a>
+        </p>
+    </div>
+  </footer>
+</body>
+</html>
