@@ -57,7 +57,34 @@
     }
 
     .languages img[alt="Deutsch"] {
-        object-fit: cover; /* Ajuste específico para la bandera de Alemania */
+        object-fit: cover;
+    }
+
+    .marquee {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      background-color: #004080;
+      color: white;
+      padding: 10px 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
 
     section {
@@ -153,38 +180,43 @@
         }
 
         .videos-container {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el tamaño mínimo de los videos */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         }
 
         section h2 {
-            font-size: 1.5rem; /* Reduce el tamaño del título */
+            font-size: 1.5rem;
         }
 
         section p {
-            font-size: 1rem; /* Reduce el tamaño del texto */
+            font-size: 1rem;
         }
 
         footer {
-            padding: 20px 10px; /* Reduce el padding del footer */
+            padding: 20px 10px;
         }
 
         .responsive-image {
-            content: url("fotos/fondomovil.png"); /* Cambia la imagen en dispositivos móviles */
+            content: url("fotos/fondomovil.png");
+            display: block;
+            width: 100vw;
+            max-width: 100%;
+            height: auto;
+            margin: 0;
         }
     }
 
     @media (max-width: 480px) {
         .logo img {
-            height: 40px; /* Reduce el tamaño del logo */
+            height: 40px;
         }
 
         .languages img {
             width: 30px;
-            height: 30px; /* Ajusta el tamaño de las banderas */
+            height: 30px;
         }
 
         .videos-container {
-            grid-template-columns: 1fr; /* Muestra un video por fila */
+            grid-template-columns: 1fr;
         }
     }
   </style>
@@ -203,8 +235,13 @@
     </div>
   </header>
 
-  <!-- Responsive Image Section -->
-  <img src="fotos/fondopc1.png" alt="Abolladura" class="responsive-image" />
+  <!-- Texto desplazándose -->
+  <div class="marquee">
+    <span>Richiedi un preventivo gratuito in pochi minuti mandando foto e video al +3791038269</span>
+  </div>
+
+  <!-- Imagen principal -->
+  <img src="fotos/Antes-despues-granizo-misma-imagen-1024x391.png" alt="Abolladura" class="responsive-image" />
 
   <section>
     <h2>Chi siamo?</h2>
@@ -214,9 +251,9 @@ Facciamo tutto il possibile per riparare la tua auto senza usare vernice né stu
 
 La tua auto non perderà valore e sarà affidata a esperti che possono anche ritirarla direttamente a domicilio, se non puoi portarla tu.
 
-Alla riconsegna, vedrai la carrozzeria come appena uscita dalla fabbrica!    </p>
+Alla riconsegna, vedrai la carrozzeria come appena uscita dalla fabbrica!
+    </p>
   </section>
-
 
   <section class="videos-section">
     <h2>Esempi del nostro lavoro</h2>
@@ -267,6 +304,6 @@ Alla riconsegna, vedrai la carrozzeria come appena uscita dalla fabbrica!    </p
             <a href="https://www.instagram.com/dent_repair_pdr" target="_blank" style="color: white; text-decoration: none;">dent_repair_pdr</a>
         </p>
     </div>
-</footer>
+  </footer>
 </body>
 </html>
