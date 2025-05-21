@@ -7,10 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary-color: #004080;
-      --secondary-color: #e6f2ff;
-      --background-color: #f9fcff;
-      --text-color: #333;
+      --color-primary: #004080;
+      --color-secondary: #e6f2ff;
+      --color-background: #f9fcff;
+      --color-text: #333;
     }
 
     * {
@@ -21,8 +21,8 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
+      background-color: var(--color-background);
+      color: var(--color-text);
       line-height: 1.6;
     }
 
@@ -31,8 +31,10 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: var(--secondary-color);
+      background-color: var(--color-secondary);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: relative;
+      z-index: 10;
     }
 
     .logo img {
@@ -56,8 +58,40 @@
       transform: scale(1.1);
     }
 
-    .languages img[alt="German"] {
-        object-fit: cover;
+    .languages img[alt="Deutsch"] {
+      object-fit: cover;
+    }
+
+    /* Scrolling text */
+    .scrolling-text {
+      position: relative;
+      background: var(--color-secondary);
+      color: var(--color-primary);
+      font-weight: 600;
+      font-size: 1.1rem;
+      overflow: hidden;
+      white-space: nowrap;
+      box-shadow: inset 0 -2px 5px -2px rgba(0,0,0,0.1);
+      height: 2.5rem;
+      line-height: 2.5rem;
+    }
+
+    .scrolling-text::before {
+      content: attr(data-text);
+      position: absolute;
+      white-space: nowrap;
+      will-change: transform;
+      animation: scroll-left 20s linear infinite;
+      padding-left: 100%;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
 
     section {
@@ -67,7 +101,7 @@
 
     section h2 {
       font-size: 2rem;
-      color: var(--primary-color);
+      color: var(--color-primary);
       margin-bottom: 20px;
     }
 
@@ -78,7 +112,7 @@
     }
 
     .videos-section {
-      background-color: var(--secondary-color);
+      background-color: var(--color-secondary);
     }
 
     .videos-container {
@@ -92,7 +126,7 @@
 
     .video {
       background: white;
-      border: 1px solid var(--primary-color);
+      border: 1px solid var(--color-primary);
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
@@ -112,96 +146,101 @@
     }
 
     footer {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 30px 20px;
-        text-align: center;
+      background-color: var(--color-primary);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
     }
     footer .footer-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
     }
     footer p {
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
     footer p img {
-        width: 26px;
-        height: 26px;
-        object-fit: contain;
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
     }
 
     .responsive-image {
-        width: 100%;
-        height: auto;
+      width: 100%;
+      height: auto;
     }
 
     @media (max-width: 768px) {
-        .navbar {
-            flex-direction: column;
-            gap: 1rem;
-            text-align: center;
-        }
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
 
-        .languages {
-            justify-content: center;
-        }
+      .languages {
+        justify-content: center;
+      }
 
-        .videos-container {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        }
+      .videos-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
 
-        section h2 {
-            font-size: 1.5rem;
-        }
+      section h2 {
+        font-size: 1.5rem;
+      }
 
-        section p {
-            font-size: 1rem;
-        }
+      section p {
+        font-size: 1rem;
+      }
 
-        footer {
-            padding: 20px 10px;
-        }
+      footer {
+        padding: 20px 10px;
+      }
 
-        .responsive-image {
-            content: url("fotos/fondomovil.png");
-        }
+      .responsive-image {
+        content: url("fotos/fondomovil.png");
+      }
     }
 
     @media (max-width: 480px) {
-        .logo img {
-            height: 40px;
-        }
+      .logo img {
+        height: 40px;
+      }
 
-        .languages img {
-            width: 30px;
-            height: 30px;
-        }
+      .languages img {
+        width: 30px;
+        height: 30px;
+      }
 
-        .videos-container {
-            grid-template-columns: 1fr;
-        }
+      .videos-container {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <header class="navbar">
     <div class="languages">
-      <a href="index.html"><img src="fotos/italia.png" alt="Italian" title="Italian" /></a>
-      <a href="index_es.html"><img src="fotos/spain.png" alt="Spanish" title="Spanish" /></a>
+      <a href="index.html"><img src="fotos/italia.png" alt="Italiano" title="Italiano" /></a>
+      <a href="index_es.html"><img src="fotos/spain.png" alt="Español" title="Español" /></a>
       <a href="index_en.html"><img src="fotos/uk.png" alt="English" title="English" /></a>
-      <a href="index_fr.html"><img src="fotos/francia.svg" alt="French" title="French" /></a>
-      <a href="index_de.html"><img src="fotos/ale.svg" alt="German" title="German" /></a>
+      <a href="index_fr.html"><img src="fotos/francia.svg" alt="Français" title="Français" /></a>
+      <a href="index_de.html"><img src="fotos/ale.svg" alt="Deutsch" title="Deutsch" /></a>
     </div>
     <div class="logo">
       <img src="fotos/logojuan2.png" alt="Dent Repair" />
     </div>
   </header>
+
+  <!-- Scrolling text below navbar -->
+  <div class="scrolling-text" data-text="Request a free quote today – send photos and videos to +3791038269">
+    Request a free quote today – send photos and videos to +3791038269
+  </div>
 
   <img src="fotos/fondopc1.png" alt="Dent Repair" class="responsive-image" />
 
@@ -209,11 +248,11 @@
     <h2>Who are we?</h2>
     <p>
       We are technicians specialized in repairing hail damage and other small dents on vehicles (both steel and aluminum).
-      We strive to repair your vehicle without painting or filler. In most cases, you will get your vehicle back the same day – without the high costs and long wait times of traditional repair shops.
+      We do everything possible to repair your vehicle without painting or filling. In most cases, you will get your vehicle back the same day – without high costs and long waiting times like in traditional workshops.
       <br><br>
-      Your car does not lose value and is placed in the hands of professionals who can even come pick it up at your home if you're unable to bring it in yourself.
+      Your car does not lose value and is placed in the hands of professionals who can even pick it up directly at your home if you cannot bring it yourself.
       <br><br>
-      After the repair, your car will look like it just left the factory!
+      After the repair, your vehicle will look like it just came from the factory!
     </p>
   </section>
 
@@ -249,22 +288,22 @@
 
   <footer>
     <div class="footer-grid">
-        <p>
-            <img src="fotos/mail.webp" alt="Email" />
-            giovamarceca16@gmail.com
-        </p>
-        <p>
-            <img src="fotos/telefono.webp" alt="Phone" />
-            +39 379 103 82 69
-        </p>
-        <p>
-            <img src="fotos/direccion.webp" alt="Address" />
-            Turin, Via Envie 8, 10141
-        </p>
-        <p>
-            <img src="fotos/ig.webp" alt="Instagram" />
-            <a href="https://www.instagram.com/dent_repair_pdr" target="_blank" style="color: white; text-decoration: none;">dent_repair_pdr</a>
-        </p>
+      <p>
+        <img src="fotos/mail.webp" alt="E-Mail" />
+        giovamarceca16@gmail.com
+      </p>
+      <p>
+        <img src="fotos/telefono.webp" alt="Phone" />
+        +39 379 103 82 69
+      </p>
+      <p>
+        <img src="fotos/direccion.webp" alt="Address" />
+        Turin, Via Envie 8, 10141
+      </p>
+      <p>
+        <img src="fotos/ig.webp" alt="Instagram" />
+        <a href="https://www.instagram.com/dent_repair_pdr" target="_blank" style="color: white; text-decoration: none;">dent_repair_pdr</a>
+      </p>
     </div>
   </footer>
 </body>
