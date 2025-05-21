@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Réparation de Bosses</title>
+  <title>Dent Repair</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --color-primario: #004080;
-      --color-secundario: #e6f2ff;
-      --color-fondo: #f9fcff;
-      --color-texto: #333;
+      --primary-color: #004080;
+      --secondary-color: #e6f2ff;
+      --background-color: #f9fcff;
+      --text-color: #333;
     }
 
     * {
@@ -21,8 +21,8 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--color-fondo);
-      color: var(--color-texto);
+      background-color: var(--background-color);
+      color: var(--text-color);
       line-height: 1.6;
     }
 
@@ -31,7 +31,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: var(--color-secundario);
+      background-color: var(--secondary-color);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
@@ -56,8 +56,8 @@
       transform: scale(1.1);
     }
 
-    .languages img[alt="Deutsch"] {
-        object-fit: cover; /* Ajuste específico para la bandera de Alemania */
+    .languages img[alt="Allemand"] {
+        object-fit: cover;
     }
 
     section {
@@ -67,7 +67,7 @@
 
     section h2 {
       font-size: 2rem;
-      color: var(--color-primario);
+      color: var(--primary-color);
       margin-bottom: 20px;
     }
 
@@ -78,7 +78,7 @@
     }
 
     .videos-section {
-      background-color: var(--color-secundario);
+      background-color: var(--secondary-color);
     }
 
     .videos-container {
@@ -92,7 +92,7 @@
 
     .video {
       background: white;
-      border: 1px solid var(--color-primario);
+      border: 1px solid var(--primary-color);
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
@@ -111,60 +111,8 @@
       display: block;
     }
 
-    .responsive-image {
-        width: 100%;
-        height: auto;
-    }
-
-    @media (max-width: 768px) {
-        .navbar {
-            flex-direction: column;
-            gap: 1rem;
-            text-align: center;
-        }
-
-        .languages {
-            justify-content: center;
-        }
-
-        .videos-container {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el tamaño mínimo de los videos */
-        }
-
-        section h2 {
-            font-size: 1.5rem; /* Reduce el tamaño del título */
-        }
-
-        section p {
-            font-size: 1rem; /* Reduce el tamaño del texto */
-        }
-
-        footer {
-            padding: 20px 10px; /* Reduce el padding del footer */
-        }
-
-        .responsive-image {
-            content: url("fotos/fondomovil.png"); /* Change image for mobile devices */
-        }
-    }
-
-    @media (max-width: 480px) {
-        .logo img {
-            height: 40px; /* Reduce el tamaño del logo */
-        }
-
-        .languages img {
-            width: 30px;
-            height: 30px; /* Ajusta el tamaño de las banderas */
-        }
-
-        .videos-container {
-            grid-template-columns: 1fr; /* Muestra un video por fila */
-        }
-    }
-
     footer {
-        background-color: var(--color-primario);
+        background-color: var(--primary-color);
         color: white;
         padding: 30px 20px;
         text-align: center;
@@ -187,62 +135,113 @@
         height: 26px;
         object-fit: contain;
     }
+
+    .responsive-image {
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .languages {
+            justify-content: center;
+        }
+
+        .videos-container {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+        }
+
+        section p {
+            font-size: 1rem;
+        }
+
+        footer {
+            padding: 20px 10px;
+        }
+
+        .responsive-image {
+            content: url("fotos/fondomovil.png");
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logo img {
+            height: 40px;
+        }
+
+        .languages img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .videos-container {
+            grid-template-columns: 1fr;
+        }
+    }
   </style>
 </head>
 <body>
   <header class="navbar">
     <div class="languages">
-      <a href="index.html"><img src="fotos/italia.png" alt="Italiano" title="Italiano" /></a>
-      <a href="index_es.html"><img src="fotos/spain.png" alt="Español" title="Español" /></a>
-      <a href="index_en.html"><img src="fotos/uk.png" alt="English" title="English" /></a>
+      <a href="index.html"><img src="fotos/italia.png" alt="Italien" title="Italien" /></a>
+      <a href="index_es.html"><img src="fotos/spain.png" alt="Espagnol" title="Espagnol" /></a>
+      <a href="index_en.html"><img src="fotos/uk.png" alt="Anglais" title="Anglais" /></a>
       <a href="index_fr.html"><img src="fotos/francia.svg" alt="Français" title="Français" /></a>
-      <a href="index_de.html"><img src="fotos/ale.svg" alt="Deutsch" title="Deutsch" /></a>
+      <a href="index_de.html"><img src="fotos/ale.svg" alt="Allemand" title="Allemand" /></a>
     </div>
     <div class="logo">
-      <img src="fotos/logojuan2.png" alt="Réparation de Bosses" />
+      <img src="fotos/logojuan2.png" alt="Dent Repair" />
     </div>
   </header>
 
-  <!-- Responsive Image Section -->
-  <img src="fotos/fondopc1.png" alt="Abolladura" class="responsive-image" />
+  <img src="fotos/fondopc1.png" alt="Dent Repair" class="responsive-image" />
 
   <section>
     <h2>Qui sommes-nous ?</h2>
     <p>
-      Nous sommes des techniciens spécialisés dans la réparation des dommages causés par la grêle et d'autres petites bosses sur les véhicules (qu'ils soient en tôle ou en aluminium).
-      Nous faisons tout notre possible pour réparer votre voiture sans utiliser de peinture ni de mastic. Dans la plupart des cas, nous vous rendrons le véhicule le jour même, évitant ainsi des coûts élevés et de longues attentes, comme c'est souvent le cas avec les réparations traditionnelles.
-
-      Votre voiture ne perdra pas de valeur et sera confiée à des experts qui peuvent également venir la récupérer directement à domicile si vous ne pouvez pas l'apporter vous-même.
-
-      À la restitution, vous verrez la carrosserie comme si elle sortait de l'usine !
+      Nous sommes des techniciens spécialisés dans la réparation des dégâts de grêle et autres petites bosses sur les véhicules (qu'ils soient en acier ou en aluminium).
+      Notre objectif est de réparer votre voiture sans peinture ni mastic. Dans la plupart des cas, votre véhicule sera prêt le jour même ! — sans les coûts élevés ni les longs délais des ateliers traditionnels.
+      <br><br>
+      Votre voiture ne perd pas de valeur et est entre les mains de professionnels qui peuvent même venir la chercher à votre domicile si vous ne pouvez pas vous déplacer.
+      <br><br>
+      Après la réparation, votre voiture aura l'air de sortir tout juste de l'usine !
     </p>
   </section>
 
   <section class="videos-section">
-    <h2>Exemples de notre travail</h2>
+    <h2>Exemples de nos travaux</h2>
     <div class="videos-container">
       <div class="video">
         <video controls>
           <source src="fotos/Video_1.mov" type="video/mp4" />
-          Votre navigateur ne supporte pas la vidéo.
+          Votre navigateur ne prend pas en charge cette vidéo.
         </video>
       </div>
       <div class="video">
         <video controls>
           <source src="fotos/Video.mov" type="video/mp4" />
-          Votre navigateur ne supporte pas la vidéo.
+          Votre navigateur ne prend pas en charge cette vidéo.
         </video>
       </div>
       <div class="video">
         <video controls>
           <source src="fotos/Video_3.mov" type="video/mp4" />
-          Votre navigateur ne supporte pas la vidéo.
+          Votre navigateur ne prend pas en charge cette vidéo.
         </video>
       </div>
       <div class="video">
         <video controls>
           <source src="fotos/Video_2.mov" type="video/mp4" />
-          Votre navigateur ne supporte pas la vidéo.
+          Votre navigateur ne prend pas en charge cette vidéo.
         </video>
       </div>
     </div>
