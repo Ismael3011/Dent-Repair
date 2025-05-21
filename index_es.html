@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Reparación de Bollos</title>
+  <title>Dent Repair</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --color-primario: #004080;
-      --color-secundario: #e6f2ff;
-      --color-fondo: #f9fcff;
-      --color-texto: #333;
+      --primary-color: #004080;
+      --secondary-color: #e6f2ff;
+      --background-color: #f9fcff;
+      --text-color: #333;
     }
 
     * {
@@ -21,8 +21,8 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--color-fondo);
-      color: var(--color-texto);
+      background-color: var(--background-color);
+      color: var(--text-color);
       line-height: 1.6;
     }
 
@@ -31,7 +31,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: var(--color-secundario);
+      background-color: var(--secondary-color);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
@@ -56,8 +56,8 @@
       transform: scale(1.1);
     }
 
-    .languages img[alt="Deutsch"] {
-        object-fit: cover; /* Ajuste específico para la bandera de Alemania */
+    .languages img[alt="Alemán"] {
+        object-fit: cover;
     }
 
     section {
@@ -67,7 +67,7 @@
 
     section h2 {
       font-size: 2rem;
-      color: var(--color-primario);
+      color: var(--primary-color);
       margin-bottom: 20px;
     }
 
@@ -78,7 +78,7 @@
     }
 
     .videos-section {
-      background-color: var(--color-secundario);
+      background-color: var(--secondary-color);
     }
 
     .videos-container {
@@ -92,7 +92,7 @@
 
     .video {
       background: white;
-      border: 1px solid var(--color-primario);
+      border: 1px solid var(--primary-color);
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
@@ -111,60 +111,8 @@
       display: block;
     }
 
-    .responsive-image {
-        width: 100%;
-        height: auto;
-    }
-
-    @media (max-width: 768px) {
-        .navbar {
-            flex-direction: column;
-            gap: 1rem;
-            text-align: center;
-        }
-
-        .languages {
-            justify-content: center;
-        }
-
-        .videos-container {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el tamaño mínimo de los videos */
-        }
-
-        section h2 {
-            font-size: 1.5rem; /* Reduce el tamaño del título */
-        }
-
-        section p {
-            font-size: 1rem; /* Reduce el tamaño del texto */
-        }
-
-        footer {
-            padding: 20px 10px; /* Reduce el padding del footer */
-        }
-
-        .responsive-image {
-            content: url("fotos/fondomovil.png"); /* Cambia la imagen en dispositivos móviles */
-        }
-    }
-
-    @media (max-width: 480px) {
-        .logo img {
-            height: 40px; /* Reduce el tamaño del logo */
-        }
-
-        .languages img {
-            width: 30px;
-            height: 30px; /* Ajusta el tamaño de las banderas */
-        }
-
-        .videos-container {
-            grid-template-columns: 1fr; /* Muestra un video por fila */
-        }
-    }
-
     footer {
-        background-color: var(--color-primario);
+        background-color: var(--primary-color);
         color: white;
         padding: 30px 20px;
         text-align: center;
@@ -187,6 +135,58 @@
         height: 26px;
         object-fit: contain;
     }
+
+    .responsive-image {
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .languages {
+            justify-content: center;
+        }
+
+        .videos-container {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+        }
+
+        section p {
+            font-size: 1rem;
+        }
+
+        footer {
+            padding: 20px 10px;
+        }
+
+        .responsive-image {
+            content: url("fotos/fondomovil.png");
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logo img {
+            height: 40px;
+        }
+
+        .languages img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .videos-container {
+            grid-template-columns: 1fr;
+        }
+    }
   </style>
 </head>
 <body>
@@ -194,55 +194,54 @@
     <div class="languages">
       <a href="index.html"><img src="fotos/italia.png" alt="Italiano" title="Italiano" /></a>
       <a href="index_es.html"><img src="fotos/spain.png" alt="Español" title="Español" /></a>
-      <a href="index_en.html"><img src="fotos/uk.png" alt="English" title="English" /></a>
-      <a href="index_fr.html"><img src="fotos/francia.svg" alt="Français" title="Français" /></a>
-      <a href="index_de.html"><img src="fotos/ale.svg" alt="Deutsch" title="Deutsch" /></a>
+      <a href="index_en.html"><img src="fotos/uk.png" alt="Inglés" title="Inglés" /></a>
+      <a href="index_fr.html"><img src="fotos/francia.svg" alt="Francés" title="Francés" /></a>
+      <a href="index_de.html"><img src="fotos/ale.svg" alt="Alemán" title="Alemán" /></a>
     </div>
     <div class="logo">
-      <img src="fotos/logojuan2.png" alt="Reparación de Bollos" />
+      <img src="fotos/logojuan2.png" alt="Dent Repair" />
     </div>
   </header>
 
-  <!-- Imagen Responsiva -->
-  <img src="fotos/fondopc1.png" alt="Abolladura" class="responsive-image" />
+  <img src="fotos/fondopc1.png" alt="Dent Repair" class="responsive-image" />
 
   <section>
     <h2>¿Quiénes somos?</h2>
     <p>
-      Somos técnicos especializados en la reparación de daños por granizo y otras pequeñas abolladuras en vehículos (tanto de chapa como de aluminio).
-      Hacemos todo lo posible para reparar tu coche sin usar pintura ni masilla. En la mayoría de los casos, te devolveremos el vehículo el mismo día de la entrega, evitando así costes elevados y largas esperas, como suele ocurrir con las reparaciones tradicionales.
-
-      Tu coche no perderá valor y será confiado a expertos que también pueden recogerlo directamente en tu domicilio si no puedes llevarlo tú mismo.
-
-      ¡Al devolverlo, verás la carrocería como recién salida de fábrica!
+      Somos técnicos especializados en la reparación de daños por granizo y otras abolladuras pequeñas en vehículos (ya sea de acero o aluminio).
+      Nuestro objetivo es reparar tu vehículo sin necesidad de pintar ni aplicar masilla. En la mayoría de los casos, ¡tendrás tu coche el mismo día! — sin los elevados costes ni los largos tiempos de espera de los talleres tradicionales.
+      <br><br>
+      Tu coche no pierde valor y queda en manos de profesionales que incluso pueden pasar a recogerlo por tu domicilio si no puedes traerlo tú mismo.
+      <br><br>
+      ¡Después de la reparación, tu coche parecerá recién salido de fábrica!
     </p>
   </section>
 
   <section class="videos-section">
-    <h2>Ejemplos de nuestro trabajo</h2>
+    <h2>Ejemplos de nuestros trabajos</h2>
     <div class="videos-container">
       <div class="video">
         <video controls>
           <source src="fotos/Video_1.mov" type="video/mp4" />
-          Tu navegador no soporta el video.
+          Tu navegador no admite este video.
         </video>
       </div>
       <div class="video">
         <video controls>
           <source src="fotos/Video.mov" type="video/mp4" />
-          Tu navegador no soporta el video.
+          Tu navegador no admite este video.
         </video>
       </div>
       <div class="video">
         <video controls>
           <source src="fotos/Video_3.mov" type="video/mp4" />
-          Tu navegador no soporta el video.
+          Tu navegador no admite este video.
         </video>
       </div>
       <div class="video">
         <video controls>
           <source src="fotos/Video_2.mov" type="video/mp4" />
-          Tu navegador no soporta el video.
+          Tu navegador no admite este video.
         </video>
       </div>
     </div>
