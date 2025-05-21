@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Riparazione di Bolli</title>
+  <title>Riparazione Ammaccature</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -33,6 +33,8 @@
       padding: 1rem 2rem;
       background-color: var(--color-secundario);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: relative;
+      z-index: 10;
     }
 
     .logo img {
@@ -57,30 +59,35 @@
     }
 
     .languages img[alt="Deutsch"] {
-        object-fit: cover;
+      object-fit: cover;
     }
 
-    .marquee {
-      width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      box-sizing: border-box;
-      background-color: #004080;
-      color: white;
-      padding: 10px 0;
-      font-size: 1rem;
+    /* Texto en movimiento */
+    .scrolling-text {
+      position: relative;
+      background: var(--color-secundario);
+      color: var(--color-primario);
       font-weight: 600;
+      font-size: 1.1rem;
+      overflow: hidden;
+      white-space: nowrap;
+      box-shadow: inset 0 -2px 5px -2px rgba(0,0,0,0.1);
+      height: 2.5rem;
+      line-height: 2.5rem;
     }
 
-    .marquee span {
-      display: inline-block;
+    .scrolling-text::before {
+      content: attr(data-text);
+      position: absolute;
+      white-space: nowrap;
+      will-change: transform;
+      animation: scroll-left 20s linear infinite;
       padding-left: 100%;
-      animation: scroll-left 15s linear infinite;
     }
 
     @keyframes scroll-left {
       0% {
-        transform: translateX(100%);
+        transform: translateX(0%);
       }
       100% {
         transform: translateX(-100%);
@@ -139,85 +146,80 @@
     }
 
     footer {
-        background-color: var(--color-primario);
-        color: white;
-        padding: 30px 20px;
-        text-align: center;
+      background-color: var(--color-primario);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
     }
     footer .footer-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
     }
     footer p {
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
     footer p img {
-        width: 26px;
-        height: 26px;
-        object-fit: contain;
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
     }
 
     .responsive-image {
-        width: 100%;
-        height: auto;
+      width: 100%;
+      height: auto;
     }
 
     @media (max-width: 768px) {
-        .navbar {
-            flex-direction: column;
-            gap: 1rem;
-            text-align: center;
-        }
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
 
-        .languages {
-            justify-content: center;
-        }
+      .languages {
+        justify-content: center;
+      }
 
-        .videos-container {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        }
+      .videos-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
 
-        section h2 {
-            font-size: 1.5rem;
-        }
+      section h2 {
+        font-size: 1.5rem;
+      }
 
-        section p {
-            font-size: 1rem;
-        }
+      section p {
+        font-size: 1rem;
+      }
 
-        footer {
-            padding: 20px 10px;
-        }
+      footer {
+        padding: 20px 10px;
+      }
 
-        .responsive-image {
-            content: url("fotos/aydmovil.jpg");
-            display: block;
-            width: 100vw;
-            max-width: 100%;
-            height: auto;
-            margin: 0;
-        }
+      .responsive-image {
+        content: url("fotos/fondomovil.png");
+      }
     }
 
     @media (max-width: 480px) {
-        .logo img {
-            height: 40px;
-        }
+      .logo img {
+        height: 40px;
+      }
 
-        .languages img {
-            width: 30px;
-            height: 30px;
-        }
+      .languages img {
+        width: 30px;
+        height: 30px;
+      }
 
-        .videos-container {
-            grid-template-columns: 1fr;
-        }
+      .videos-container {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -231,27 +233,26 @@
       <a href="index_de.html"><img src="fotos/ale.svg" alt="Deutsch" title="Deutsch" /></a>
     </div>
     <div class="logo">
-      <img src="fotos/logojuan2.png" alt="Riparazione di Ammaccature" />
+      <img src="fotos/logojuan2.png" alt="Riparazione Ammaccature" />
     </div>
   </header>
 
-  <!-- Texto desplazándose -->
-  <div class="marquee">
-    <span>Richiedi un preventivo gratuito in pochi minuti mandando foto e video al +3791038269</span>
+  <!-- Texto en movimiento debajo de la navbar -->
+  <div class="scrolling-text" data-text="Richiedi oggi stesso un preventivo gratuito – invia foto e video al +3791038269">
+    Richiedi oggi stesso un preventivo gratuito – invia foto e video al +3791038269
   </div>
 
-  <!-- Imagen principal -->
-  <img src="fotos/Antes-despues-granizo-misma-imagen-1024x391.png" alt="Abolladura" class="responsive-image" />
+  <img src="fotos/fondopc1.png" alt="Riparazione Ammaccature" class="responsive-image" />
 
   <section>
     <h2>Chi siamo?</h2>
     <p>
-Siamo tecnici specializzati nella riparazione di danni da grandine e di altre piccole ammaccature su veicoli (sia in lamiera che in alluminio).
-Facciamo tutto il possibile per riparare la tua auto senza usare vernice né stucco. Nella maggior parte dei casi, ti riconsegneremo il veicolo lo stesso giorno della consegna, evitando così costi elevati e lunghe attese, come spesso accade con le riparazioni tradizionali.
-
-La tua auto non perderà valore e sarà affidata a esperti che possono anche ritirarla direttamente a domicilio, se non puoi portarla tu.
-
-Alla riconsegna, vedrai la carrozzeria come appena uscita dalla fabbrica!
+      Siamo tecnici specializzati nella riparazione di danni da grandine e altre piccole ammaccature su veicoli (sia in lamiera che in alluminio).
+      Facciamo di tutto per riparare il tuo veicolo senza verniciatura o stuccatura. Nella maggior parte dei casi, riceverai il tuo veicolo lo stesso giorno – senza costi elevati e lunghe attese come nelle officine tradizionali.
+      <br><br>
+      La tua auto non perde valore ed è affidata a professionisti che possono anche ritirarla direttamente a casa tua, se non puoi portarla tu stesso.
+      <br><br>
+      Dopo la riparazione, il tuo veicolo sembrerà appena uscito dalla fabbrica!
     </p>
   </section>
 
@@ -287,22 +288,22 @@ Alla riconsegna, vedrai la carrozzeria come appena uscita dalla fabbrica!
 
   <footer>
     <div class="footer-grid">
-        <p>
-            <img src="fotos/mail.webp" alt="Email" />
-            giovamarceca16@gmail.com
-        </p>
-        <p>
-            <img src="fotos/telefono.webp" alt="Telefono" />
-            +39 379 103 82 69
-        </p>
-        <p>
-            <img src="fotos/direccion.webp" alt="Indirizzo" />
-            Torino, Via Envie 8, 10141 
-        </p>
-        <p>
-            <img src="fotos/ig.webp" alt="Instagram" />
-            <a href="https://www.instagram.com/dent_repair_pdr" target="_blank" style="color: white; text-decoration: none;">dent_repair_pdr</a>
-        </p>
+      <p>
+        <img src="fotos/mail.webp" alt="E-Mail" />
+        giovamarceca16@gmail.com
+      </p>
+      <p>
+        <img src="fotos/telefono.webp" alt="Telefono" />
+        +39 379 103 82 69
+      </p>
+      <p>
+        <img src="fotos/direccion.webp" alt="Indirizzo" />
+        Torino, Via Envie 8, 10141
+      </p>
+      <p>
+        <img src="fotos/ig.webp" alt="Instagram" />
+        <a href="https://www.instagram.com/dent_repair_pdr" target="_blank" style="color: white; text-decoration: none;">dent_repair_pdr</a>
+      </p>
     </div>
   </footer>
 </body>
