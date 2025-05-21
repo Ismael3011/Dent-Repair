@@ -60,6 +60,40 @@
         object-fit: cover;
     }
 
+    /* Texto deslizante debajo de la navbar */
+    .scrolling-text {
+      background-color: var(--color-secundario);
+      color: var(--color-primario);
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: 10px 0;
+      font-weight: 600;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    .scrolling-text::before {
+      content: attr(data-text);
+      position: absolute;
+      white-space: nowrap;
+      will-change: transform;
+      animation: scroll-left 15s linear infinite;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-primario);
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
     section {
       padding: 60px 20px;
       text-align: center;
@@ -202,6 +236,11 @@
       <img src="fotos/logojuan2.png" alt="Dellenreparatur" />
     </div>
   </header>
+
+  <!-- Texto deslizante debajo de la navbar -->
+  <div class="scrolling-text" data-text="Fordern Sie noch heute Ihr kostenloses Angebot an – senden Sie Fotos und Videos an +3791038269">
+    Fordern Sie noch heute Ihr kostenloses Angebot an – senden Sie Fotos und Videos an +3791038269
+  </div>
 
   <img src="fotos/fondopc1.png" alt="Dellenreparatur" class="responsive-image" />
 
