@@ -33,6 +33,8 @@
       padding: 1rem 2rem;
       background-color: var(--color-secundario);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: relative;
+      z-index: 10;
     }
 
     .logo img {
@@ -57,20 +59,20 @@
     }
 
     .languages img[alt="Deutsch"] {
-        object-fit: cover;
+      object-fit: cover;
     }
 
-    /* Texto deslizante debajo de la navbar */
     .scrolling-text {
-      background-color: var(--color-secundario);
-      color: var(--color-primario);
-      white-space: nowrap;
-      overflow: hidden;
-      box-sizing: border-box;
-      padding: 10px 0;
-      font-weight: 600;
-      font-size: 1rem;
       position: relative;
+      background: var(--color-secundario);
+      color: var(--color-primario);
+      font-weight: 600;
+      font-size: 1.1rem;
+      overflow: hidden;
+      white-space: nowrap;
+      box-shadow: inset 0 -2px 5px -2px rgba(0,0,0,0.1);
+      height: 2.5rem;
+      line-height: 2.5rem;
     }
 
     .scrolling-text::before {
@@ -78,11 +80,8 @@
       position: absolute;
       white-space: nowrap;
       will-change: transform;
-      animation: scroll-left 15s linear infinite;
-      left: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--color-primario);
+      animation: scroll-left 20s linear infinite;
+      padding-left: 100%;
     }
 
     @keyframes scroll-left {
@@ -146,80 +145,83 @@
     }
 
     footer {
-        background-color: var(--color-primario);
-        color: white;
-        padding: 30px 20px;
-        text-align: center;
+      background-color: var(--color-primario);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
     }
+
     footer .footer-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
     }
+
     footer p {
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
+
     footer p img {
-        width: 26px;
-        height: 26px;
-        object-fit: contain;
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
     }
 
     .responsive-image {
-        width: 100%;
-        height: auto;
+      width: 100%;
+      height: auto;
     }
 
     @media (max-width: 768px) {
-        .navbar {
-            flex-direction: column;
-            gap: 1rem;
-            text-align: center;
-        }
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
 
-        .languages {
-            justify-content: center;
-        }
+      .languages {
+        justify-content: center;
+      }
 
-        .videos-container {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        }
+      .videos-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
 
-        section h2 {
-            font-size: 1.5rem;
-        }
+      section h2 {
+        font-size: 1.5rem;
+      }
 
-        section p {
-            font-size: 1rem;
-        }
+      section p {
+        font-size: 1rem;
+      }
 
-        footer {
-            padding: 20px 10px;
-        }
+      footer {
+        padding: 20px 10px;
+      }
 
-        .responsive-image {
-            content: url("fotos/fondomovil.png");
-        }
+      .responsive-image {
+        content: url("fotos/aydmovil.jpg");
+      }
     }
 
     @media (max-width: 480px) {
-        .logo img {
-            height: 40px;
-        }
+      .logo img {
+        height: 40px;
+      }
 
-        .languages img {
-            width: 30px;
-            height: 30px;
-        }
+      .languages img {
+        width: 30px;
+        height: 30px;
+      }
 
-        .videos-container {
-            grid-template-columns: 1fr;
-        }
+      .videos-container {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -237,22 +239,21 @@
     </div>
   </header>
 
-  <!-- Texto deslizante debajo de la navbar -->
-  <div class="scrolling-text" data-text="Fordern Sie noch heute Ihr kostenloses Angebot an – senden Sie Fotos und Videos an +3791038269">
-    Fordern Sie noch heute Ihr kostenloses Angebot an – senden Sie Fotos und Videos an +3791038269
+  <div class="scrolling-text" data-text="Fordern Sie noch heute einen kostenlosen Kostenvoranschlag an – senden Sie Fotos und Videos an +3791038269">
+    Fordern Sie noch heute einen kostenlosen Kostenvoranschlag an – senden Sie Fotos und Videos an +3791038269
   </div>
 
-  <img src="fotos/fondopc1.png" alt="Dellenreparatur" class="responsive-image" />
+  <img src="fotos/Antes-despues-granizo-misma-imagen-1024x391.png" alt="Dellenreparatur" class="responsive-image" />
 
   <section>
     <h2>Wer sind wir?</h2>
     <p>
-      Wir sind Techniker, die sich auf die Reparatur von Hagelschäden und anderen kleinen Dellen an Fahrzeugen (sowohl aus Blech als auch aus Aluminium) spezialisiert haben.
-      Wir setzen alles daran, Ihr Fahrzeug ohne Lackieren oder Spachteln zu reparieren. In den meisten Fällen erhalten Sie Ihr Fahrzeug noch am selben Tag zurück – ohne hohe Kosten und lange Wartezeiten wie bei traditionellen Werkstätten.
+      Wir sind spezialisierte Techniker für die Reparatur von Hagelschäden und anderen kleinen Dellen an Fahrzeugen (sowohl aus Blech als auch aus Aluminium).
+      Unser Ziel ist es, Ihr Fahrzeug ohne Lackierung oder Spachtelmasse zu reparieren. In den meisten Fällen erhalten Sie Ihr Fahrzeug am selben Tag zurück – ohne hohe Kosten und lange Wartezeiten wie in traditionellen Werkstätten.
       <br><br>
-      Ihr Auto verliert keinen Wert und wird in die Hände von Profis gelegt, die es sogar direkt bei Ihnen zu Hause abholen können, falls Sie es nicht selbst bringen können.
+      Ihr Auto verliert nicht an Wert und wird Fachleuten anvertraut, die es bei Bedarf sogar direkt bei Ihnen zu Hause abholen können.
       <br><br>
-      Nach der Reparatur wird Ihr Fahrzeug aussehen, als käme es direkt vom Werk!
+      Nach der Reparatur sieht Ihr Fahrzeug aus wie frisch aus der Fabrik!
     </p>
   </section>
 
@@ -262,25 +263,25 @@
       <div class="video">
         <video controls>
           <source src="fotos/Video_1.mov" type="video/mp4" />
-          Ihr Browser unterstützt das Video nicht.
+          Ihr Browser unterstützt dieses Video nicht.
         </video>
       </div>
       <div class="video">
         <video controls>
           <source src="fotos/Video.mov" type="video/mp4" />
-          Ihr Browser unterstützt das Video nicht.
+          Ihr Browser unterstützt dieses Video nicht.
         </video>
       </div>
       <div class="video">
         <video controls>
           <source src="fotos/Video_3.mov" type="video/mp4" />
-          Ihr Browser unterstützt das Video nicht.
+          Ihr Browser unterstützt dieses Video nicht.
         </video>
       </div>
       <div class="video">
         <video controls>
           <source src="fotos/Video_2.mov" type="video/mp4" />
-          Ihr Browser unterstützt das Video nicht.
+          Ihr Browser unterstützt dieses Video nicht.
         </video>
       </div>
     </div>
@@ -288,22 +289,22 @@
 
   <footer>
     <div class="footer-grid">
-        <p>
-            <img src="fotos/mail.webp" alt="E-Mail" />
-            giovamarceca16@gmail.com
-        </p>
-        <p>
-            <img src="fotos/telefono.webp" alt="Telefon" />
-            +39 379 103 82 69
-        </p>
-        <p>
-            <img src="fotos/direccion.webp" alt="Adresse" />
-            Turin, Via Envie 8, 10141
-        </p>
-        <p>
-            <img src="fotos/ig.webp" alt="Instagram" />
-            <a href="https://www.instagram.com/dent_repair_pdr" target="_blank" style="color: white; text-decoration: none;">dent_repair_pdr</a>
-        </p>
+      <p>
+        <img src="fotos/mail.webp" alt="E-Mail" />
+        giovamarceca16@gmail.com
+      </p>
+      <p>
+        <img src="fotos/telefono.webp" alt="Telefon" />
+        +39 379 103 82 69
+      </p>
+      <p>
+        <img src="fotos/direccion.webp" alt="Adresse" />
+        Turin, Via Envie 8, 10141
+      </p>
+      <p>
+        <img src="fotos/ig.webp" alt="Instagram" />
+        <a href="https://www.instagram.com/dent_repair_pdr" target="_blank" style="color: white; text-decoration: none;">dent_repair_pdr</a>
+      </p>
     </div>
   </footer>
 </body>
