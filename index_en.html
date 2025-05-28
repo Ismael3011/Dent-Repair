@@ -7,10 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --color-primary: #004080;
-      --color-secondary: #e6f2ff;
-      --color-background: #f9fcff;
-      --color-text: #333;
+      --color-primario: #004080;
+      --color-secundario: #e6f2ff;
+      --color-fondo: #f9fcff;
+      --color-texto: #333;
     }
 
     * {
@@ -21,8 +21,8 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--color-background);
-      color: var(--color-text);
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
       line-height: 1.6;
     }
 
@@ -31,7 +31,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: var(--color-secondary);
+      background-color: var(--color-secundario);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       position: relative;
       z-index: 10;
@@ -62,11 +62,10 @@
       object-fit: cover;
     }
 
-    /* Scrolling text */
     .scrolling-text {
       position: relative;
-      background: var(--color-secondary);
-      color: var(--color-primary);
+      background: var(--color-secundario);
+      color: var(--color-primario);
       font-weight: 600;
       font-size: 1.1rem;
       overflow: hidden;
@@ -101,7 +100,7 @@
 
     section h2 {
       font-size: 2rem;
-      color: var(--color-primary);
+      color: var(--color-primario);
       margin-bottom: 20px;
     }
 
@@ -112,7 +111,7 @@
     }
 
     .videos-section {
-      background-color: var(--color-secondary);
+      background-color: var(--color-secundario);
     }
 
     .videos-container {
@@ -126,7 +125,7 @@
 
     .video {
       background: white;
-      border: 1px solid var(--color-primary);
+      border: 1px solid var(--color-primario);
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
@@ -146,17 +145,19 @@
     }
 
     footer {
-      background-color: var(--color-primary);
+      background-color: var(--color-primario);
       color: white;
       padding: 30px 20px;
       text-align: center;
     }
+
     footer .footer-grid {
       display: flex;
       flex-direction: column;
       gap: 15px;
       align-items: center;
     }
+
     footer p {
       margin: 0;
       display: flex;
@@ -164,6 +165,7 @@
       justify-content: center;
       gap: 10px;
     }
+
     footer p img {
       width: 26px;
       height: 26px;
@@ -203,7 +205,7 @@
       }
 
       .responsive-image {
-        content: url("fotos/fondomovil.png");
+        content: url("fotos/aydmovil.jpg");
       }
     }
 
@@ -237,22 +239,21 @@
     </div>
   </header>
 
-  <!-- Scrolling text below navbar -->
-  <div class="scrolling-text" data-text="Request a free quote today – send photos and videos to +3791038269">
-    Request a free quote today – send photos and videos to +3791038269
+  <div class="scrolling-text" data-text="Get a free estimate today – send photos and videos to +3791038269">
+    Get a free estimate today – send photos and videos to +3791038269
   </div>
 
-  <img src="fotos/fondopc1.png" alt="Dent Repair" class="responsive-image" />
+  <img src="fotos/Antes-despues-granizo-misma-imagen-1024x391.png" alt="Dent Repair" class="responsive-image" />
 
   <section>
     <h2>Who are we?</h2>
     <p>
-      We are technicians specialized in repairing hail damage and other small dents on vehicles (both steel and aluminum).
-      We do everything possible to repair your vehicle without painting or filling. In most cases, you will get your vehicle back the same day – without high costs and long waiting times like in traditional workshops.
+      We are specialized technicians in repairing hail damage and other small dents on vehicles (both steel and aluminum).
+      Our goal is to repair your vehicle without painting or filling. In most cases, you’ll get your car back the same day – no high costs or long waits like in traditional body shops.
       <br><br>
-      Your car does not lose value and is placed in the hands of professionals who can even pick it up directly at your home if you cannot bring it yourself.
+      Your car won’t lose value, and it will be entrusted to professionals who can even pick it up from your home if needed.
       <br><br>
-      After the repair, your vehicle will look like it just came from the factory!
+      After the repair, your vehicle will look like it just left the factory!
     </p>
   </section>
 
@@ -262,25 +263,25 @@
       <div class="video">
         <video controls>
           <source src="fotos/Video_1.mov" type="video/mp4" />
-          Your browser does not support the video.
+          Your browser does not support this video.
         </video>
       </div>
       <div class="video">
         <video controls>
           <source src="fotos/Video.mov" type="video/mp4" />
-          Your browser does not support the video.
+          Your browser does not support this video.
         </video>
       </div>
       <div class="video">
         <video controls>
           <source src="fotos/Video_3.mov" type="video/mp4" />
-          Your browser does not support the video.
+          Your browser does not support this video.
         </video>
       </div>
       <div class="video">
         <video controls>
           <source src="fotos/Video_2.mov" type="video/mp4" />
-          Your browser does not support the video.
+          Your browser does not support this video.
         </video>
       </div>
     </div>
@@ -289,7 +290,7 @@
   <footer>
     <div class="footer-grid">
       <p>
-        <img src="fotos/mail.webp" alt="E-Mail" />
+        <img src="fotos/mail.webp" alt="Email" />
         giovamarceca16@gmail.com
       </p>
       <p>
